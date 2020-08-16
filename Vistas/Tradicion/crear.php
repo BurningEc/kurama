@@ -79,8 +79,7 @@
 
 <script type="text/javascript"
   src="https://code.jquery.com/jquery-2.0.2.min.js"
-  integrity="sha256-TZWGoHXwgqBP1AF4SZxHIBKzUdtMGk0hCQegiR99itk="
-  crossorigin="anonymous"></script>
+ ></script>
 	<script type="text/javascript">
 	$("tbody#itemlist").on("click","#borrar",function(){
 	    $(this).parent().parent().remove();
