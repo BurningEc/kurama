@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Centro Hilístico Kurama</title>
     <link href="../../Static/Inicio/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../../Static/Inicio/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
