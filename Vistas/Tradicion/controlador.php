@@ -12,8 +12,7 @@
     if($_POST['ver']=="crear"){ 
     	$detail = $_POST["item"];
 		$parroquia = $_POST["parroquia"];
-		echo "".sizeof($detail['tipo']);
-		echo (sizeof($detail['tipo']));
+
     	for ($i = 0; $i < sizeof($detail['tipo']); $i++) {
 
     		$nombreimg=$_FILES['image']['name'][$i];
@@ -30,17 +29,9 @@
 				if(mysqli_query($con,$sentencia1)){
 			        header("Location:lista.php");	
 				}
-				else{
-					echo "no entro lista";
-				}	
-		    }else{
-
-				echo "no entro conexion";
-			}
+				
+		    }
         }	
-	}else
-	{
-		echo "no entro a crear";
 	}
 
 	if($_POST['ver']=="modificar"){ 
