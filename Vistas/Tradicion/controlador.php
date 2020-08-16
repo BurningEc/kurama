@@ -11,21 +11,36 @@
 	   
     if($_POST['ver']=="crear"){ 
     	$detail = $_POST["item"];
-        $parroquia = $_POST["parroquia"];
+		$parroquia = $_POST["parroquia"];
+		echo "".sizeof($detail['tipo']);
+		echo (sizeof($detail['tipo']));
     	for ($i = 0; $i < sizeof($detail['tipo']); $i++) {
+
     		$nombreimg=$_FILES['image']['name'][$i];
 		    $tem=$_FILES['image']['tmp_name'][$i];
 		    $ruta=file_get_contents($tem);
 		    $ruta=base64_encode($ruta);
 			$sentencia="INSERT INTO tradicion (TipoTradicion_idTipoTradicion,nombre_T,descripcion_T,imagen_T) VALUES (".$detail['tipo'][$i].", '".$detail['nombre'][$i]."', '".$detail['descripcion'][$i]."', '".$ruta."')";
+			echo "".$sentencia;
 			if(mysqli_query($con,$sentencia)){
+
 				$id_tra = mysqli_insert_id($con);
 				$sentencia1="INSERT INTO parroquia_detalle (Parroquia_idParroquia,Tradicion_idTradicion) VALUES (".$parroquia.", '".$id_tra."')";
+				echo "".$sentencia1;
 				if(mysqli_query($con,$sentencia1)){
 			        header("Location:lista.php");	
-			    }	
-		    }
+				}
+				else{
+					echo "no entro lista";
+				}	
+		    }else{
+
+				echo "no entro conexion";
+			}
         }	
+	}else
+	{
+		echo "no entro a crear";
 	}
 
 	if($_POST['ver']=="modificar"){ 
